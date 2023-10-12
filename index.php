@@ -7,6 +7,8 @@
 </head>
 <body>
 <h1>PIZAAAAAA</h1>
-
+<?php
+echo 'asd';
+?>
 </body>
 </html>
