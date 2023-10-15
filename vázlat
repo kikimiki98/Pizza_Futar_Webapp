@@ -1,0 +1,11 @@
+1., Adatbázis szerkezet (MySQL):
+Customers tábla: Tartalmazza a vásárlók adatait, mint például az ID, név, cím, telefon és email.
+Pizzas tábla: Tartalmazza a különböző pizzák adatait, mint például az ID, név, ár és leírás.
+Orders tábla: Tartalmazza a rendelések adatait, mint például az ID, vásárló ID, rendelés dátuma és státusza.
+OrderDetails tábla: Tartalmazza a rendelés részleteit, mint például az ID, rendelés ID, pizza ID és mennyiség.
+
+2., Kódvázlatok (PHP, HTML):
+index.php: A főoldal, ahol a vásárlók megtekinthetik a különböző pizzákat és leadhatják a rendeléseiket.
+order.php: A rendelés oldal, ahol a vásárlók megtekinthetik a rendeléseik státuszát.
+admin.php: Az adminisztrációs oldal, ahol kezelhetők a rendelések és a pizzák.
+Remélem ez segít! Ha további kérdése van, szívesen segítek.
