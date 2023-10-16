@@ -8,3 +8,4 @@ OrderDetails tábla: Tartalmazza a rendelés részleteit, mint például az ID, 
 index.php: A főoldal, ahol a vásárlók megtekinthetik a különböző pizzákat és leadhatják a rendeléseiket.
 order.php: A rendelés oldal, ahol a vásárlók megtekinthetik a rendeléseik státuszát.
 admin.php: Az adminisztrációs oldal, ahol kezelhetők a rendelések és a pizzák.
+
