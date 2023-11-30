@@ -9,7 +9,7 @@ body {
   background-size: cover;
 }
 .overlay {
-  background-color: rgba(51, 51, 51, 0.541);
+  background-color: rgba(51, 51, 51, 0.384);
 }
 
 /*---------------------------------HEADER/NAV--------------------------------------*/
@@ -123,6 +123,33 @@ h1 {
   margin-left: 100px;
   line-height: 120px;
 }
+
+/*--------------------------------FEATURED------------------------------------*/
+.shadow {
+}
+.homepage_featured {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  z-index: -1000;
+}
+.homepage_featured-sectiona {
+  flex: 1;
+  background-image: url("images/pizza1.jpg");
+  background-size: cover;
+  min-height: calc(100vh - 75px);
+  z-index: -1000;
+}
+
+.homepage_featured-sectionb {
+  flex: 1;
+  background-image: url("images/pizza2.jpg");
+  background-size: cover;
+  min-height: calc(100vh - 75px);
+  z-index: -1000;
+}
+
 /*--------------------------------FOOTER------------------------------------*/
 footer {
   color: white;

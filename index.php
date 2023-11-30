@@ -32,6 +32,16 @@
             <h1>"Serving Slice-perfection,<br> Every Crust Counts!"</h1>
             <button class="btn-menu">See Menu</button>
         </div>
+        <div class="homepage_featured">
+            <div class="homepage_featured-sectiona">
+                <div class="shadow"></div>
+                asd
+            </div>
+            <div class="homepage_featured-sectionb">
+                <div class="shadow"></div>
+                asd
+            </div>
+        </div>
         <footer>
             Email: pizza@pizzaproject.com
 
