@@ -10,40 +10,56 @@
 </head>
 
 <body>
-    <header>
-        <nav class="header-navbar">
-            <ul>
-                <a href="#"><i class="fa-solid fa-pizza-slice fa-xl"></i></a>
-                <a href="#">MENU</a>
-                <a href="#">DEALS</a>
-            </ul>
-        </nav>
-        <nav class="header-navbar">
-            <ul>
-                <a href="#">ORDER NOW</a>
-                <a href=" #">SIGN IN</a>
-                <a href="#"><i class="fa-solid fa-user"></i></a>
-            </ul>
-        </nav>
-    </header>
-    <section>
-        <h2>Christmas Deal!</h2>
-        <div class="content-wrapper">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius molestias impedit unde nam libero ut doloribus minima dicta fugiat aspernatur. Facilis autem possimus porro velit placeat illo nisi pariatur cupiditate amet, suscipit non animi, quidem, delectus eaque ex! Reiciendis iure sunt eum laboriosam distinctio dolorum voluptatum pariatur alias nemo amet.</p>
-            <img src="images/christmas_pizza.jpg"></img>
-        </div>
-    </section>
-    <section>
-        <h2>Try our new double Pizza!</h2>
-        <div class="content-wrapper">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo iure magnam vitae dolor nam fuga soluta error cumque, voluptatibus sit sunt exercitationem, voluptas est? Dicta dignissimos exercitationem nesciunt, itaque ab totam modi corrupti, quos, molestiae tenetur natus nemo. Iste, veniam?</p>
-            <img src="images/double_pizza.jpg"></img>
-        </div>
-    </section>
-    <footer>
-        Email: pizza@pizzaproject.com
+    <div class="overlay">
+        <header>
+            <nav class="header-navbar">
+                <div class="hamburger" onclick="toggleNav()">&#9776;</div>
+                <ul class="nav-links" id="navLinks">
+                    <a href="#"><i class="fa-solid fa-pizza-slice fa-xl"></i></a>
+                    <a href="#">MENU</a>
+                    <a href="#">DEALS</a>
+                </ul>
+            </nav>
+            <nav class="header-navbar">
+                <ul>
+                    <a href="#">ORDER NOW</a>
+                    <a href=" #">SIGN IN <i class="fa-solid fa-user"></i></a>
+                </ul>
+            </nav>
 
-    </footer>
+        </header>
+        <div class="content">
+            <h1>"Serving Slice-perfection,<br> Every Crust Counts!"</h1>
+            <button class="btn-menu">See Menu</button>
+        </div>
+        <footer>
+            Email: pizza@pizzaproject.com
+
+        </footer>
+    </div>
+    <script>
+        function toggleNav() {
+            var navLinks = document.getElementById("navLinks");
+
+            if (window.innerWidth <= 768) {
+                if (navLinks.style.display === "none" || navLinks.style.display === "") {
+                    navLinks.style.animation = "slideInFromLeft 0.5s ease-in";
+                    navLinks.style.display = "flex";
+                } else {
+                    navLinks.style.animation = "slideOutToLeft 0.5s ease-out";
+                    navLinks.addEventListener("animationend", onAnimationEnd);
+                }
+            } else {
+                // If the screen size is larger, always display the navigation links
+                navLinks.style.display = "flex";
+            }
+
+            function onAnimationEnd() {
+                navLinks.removeEventListener("animationend", onAnimationEnd);
+                navLinks.style.display = "none";
+            }
+        }
+    </script>
 </body>
 
 </html>
