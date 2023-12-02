@@ -11,7 +11,7 @@
 
 <body>
     <div class="overlay">
-        <header>
+        <header id="top">
             <nav class="header-navbar">
                 <div class="hamburger" onclick="toggleNav()">&#9776;</div>
                 <ul class="nav-links" id="navLinks">
@@ -50,7 +50,7 @@
 
                     </div>
                     <button class=" btn-featured">Order Now!</button>
-                    <div class="up"><a href="#home"><i class="fa-solid fa-arrow-up"></i></a></div>
+                    <div class="up"><a href="#top"><i class="fa-solid fa-arrow-up"></i></a></div>
                 </div>
 
             </div>
