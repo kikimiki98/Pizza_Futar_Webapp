@@ -1,22 +1,33 @@
 
 function toggleNav() {
     var navLinks = document.getElementById("navLinks");
-
-    if (window.innerWidth <= 768) {
-        if (navLinks.style.display === "none" || navLinks.style.display === "") {
-            navLinks.style.animation = "slideInFromLeft 0.5s ease-in";
-            navLinks.style.display = "flex";
-        } else {
-            navLinks.style.animation = "slideOutToLeft 0.5s ease-out";
-            navLinks.addEventListener("animationend", onAnimationEnd);
-        }
+    var screenWidth = window.innerWidth;
+  
+    if (screenWidth <= 768) {
+      // Toggle the display property for smaller screens
+      navLinks.style.display = navLinks.style.display === "none" ? "inline-flex" : "none";
     } else {
-        // If the screen size is larger, always display the navigation links
-        navLinks.style.display = "flex";
+      // Always display the navigation links for larger screens
+      navLinks.style.display = "inline-flex";
     }
+  }
+  
+  // Add an event listener for window resize
+  window.addEventListener("resize", function () {
+    // Call toggleNav on window resize
+    toggleNav();
+  });
 
-    function onAnimationEnd() {
-        navLinks.removeEventListener("animationend", onAnimationEnd);
-        navLinks.style.display = "none";
-    }
-}
+ document.querySelectorAll('a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        window.scrollTo({
+          top: targetElement.offsetTop,
+          behavior: 'smooth'
+        });
+      });
+    });

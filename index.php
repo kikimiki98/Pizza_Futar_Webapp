@@ -16,8 +16,8 @@
                 <div class="hamburger" onclick="toggleNav()">&#9776;</div>
                 <ul class="nav-links" id="navLinks">
                     <a href="#"><i class="fa-solid fa-pizza-slice fa-xl"></i></a>
-                    <a href="#">MENU</a>
-                    <a href="#">DEALS</a>
+                    <a href="menu.php">MENU</a>
+                    <a href="#deals">DEALS</a>
                 </ul>
             </nav>
             <nav class="header-navbar">
@@ -28,32 +28,39 @@
             </nav>
 
         </header>
-        <div class="content">
-            <h1>"Serving Slice-perfection,<br> Every Crust Counts!"</h1>
-            <button class="btn-menu">See Menu</button>
-        </div>
-        <div class="homepage_featured">
-            <div class="homepage_featured-sectiona">
-                <div class="featured_paragraph">
-                    <h3><span class="new">NEW</span> Mama's Pizza</h3>
-                    <p>Try our new home-style Pizza!</p>
-                </div>
-                <button class=" btn-featured">Order Now!</button>
+        <section id="home">
+            <div class="content">
+                <h1>"Serving Slice-perfection,<br> Every Crust Counts!"</h1>
+                <button class="btn-menu">See Menu</button>
             </div>
-            <div class="homepage_featured-sectionb">
-                <div class="featured_paragraph">
-                    <h3><span class="new">NEW</span> Last Minute Pizza</h3>
-                    <p>Are you in a rush? 8 Minutes is and its in your hands!</p>
+        </section>
+        <section id="deals">
+            <div class="homepage_featured">
+                <div class="homepage_featured-sectiona">
+                    <div class="featured_paragraph">
+                        <h3><span class="new">NEW</span> Mama's Pizza</h3>
+                        <p>Try our new home-style Pizza!</p>
+                    </div>
+                    <button class=" btn-featured">Order Now!</button>
                 </div>
-                <button class=" btn-featured">Order Now!</button>
+                <div class="homepage_featured-sectionb">
+                    <div class="featured_paragraph">
+                        <h3><span class="new">NEW</span> Last Minute Pizza</h3>
+                        <p>Are you in a rush? 8 Minutes is and its in your hands!</p>
+
+                    </div>
+                    <button class=" btn-featured">Order Now!</button>
+                    <div class="up"><a href="#home"><i class="fa-solid fa-arrow-up"></i></a></div>
+                </div>
+
             </div>
-        </div>
+        </section>
         <footer>
             Email: pizza@pizzaproject.com
 
         </footer>
     </div>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
