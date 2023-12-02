@@ -9,7 +9,7 @@ body {
   background-size: cover;
 }
 .overlay {
-  background-color: rgba(51, 51, 51, 0.384);
+  background-color: rgba(51, 51, 51, 0.253);
 }
 
 /*---------------------------------HEADER/NAV--------------------------------------*/
@@ -125,14 +125,13 @@ h1 {
 }
 
 /*--------------------------------FEATURED------------------------------------*/
-.shadow {
-}
+
 .homepage_featured {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: row;
-  z-index: -1000;
+  box-shadow: inset 0 250px 100px rgba(0, 0, 0, 0.637);
 }
 .homepage_featured-sectiona {
   flex: 1;
