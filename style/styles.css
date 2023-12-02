@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  background-image: url("images/background.jpg");
+  background-image: url("../images/background.jpg");
   background-size: cover;
 }
 .overlay {
@@ -135,7 +135,7 @@ h1 {
 }
 .homepage_featured-sectiona {
   flex: 1;
-  background-image: url("images/pizza1.jpg");
+  background-image: url("../images/pizza1.jpg");
   background-size: cover;
   min-height: calc(100vh - 100px);
   box-shadow: inset 0 250px 100px rgba(0, 0, 0, 0.637),
@@ -144,7 +144,7 @@ h1 {
 
 .homepage_featured-sectionb {
   flex: 1;
-  background-image: url("images/pizza2.jpg");
+  background-image: url("../images/pizza2.jpg");
   background-size: cover;
   min-height: calc(100vh - 100px);
   box-shadow: inset 0 250px 100px rgba(0, 0, 0, 0.637),
