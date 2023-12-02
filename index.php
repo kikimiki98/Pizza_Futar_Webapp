@@ -34,12 +34,18 @@
         </div>
         <div class="homepage_featured">
             <div class="homepage_featured-sectiona">
-                <div class="shadow"></div>
-                asd
+                <div class="featured_paragraph">
+                    <h3><span class="new">NEW</span> Mama's Pizza</h3>
+                    <p>Try our new home-style Pizza!</p>
+                </div>
+                <button class=" btn-featured">Order Now!</button>
             </div>
             <div class="homepage_featured-sectionb">
-                <div class="shadow"></div>
-                asd
+                <div class="featured_paragraph">
+                    <h3><span class="new">NEW</span> Last Minute Pizza</h3>
+                    <p>Are you in a rush? 8 Minutes is and its in your hands!</p>
+                </div>
+                <button class=" btn-featured">Order Now!</button>
             </div>
         </div>
         <footer>
