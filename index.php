@@ -16,10 +16,13 @@
                 <div class="hamburger" onclick="toggleNav()">&#9776;</div>
                 <ul class="nav-links" id="navLinks">
                     <a href="#"><i class="fa-solid fa-pizza-slice fa-xl"></i></a>
+                    <a href="#deals" class='parallax-link'>DEALS</a>
                     <a href="menu.php">MENU</a>
-                    <a href="#deals">DEALS</a>
                 </ul>
             </nav>
+
+            <h1 class="title">SliceFiesta</h1>
+
             <nav class="header-navbar">
                 <ul>
                     <a href="#">ORDER NOW</a>
@@ -31,7 +34,7 @@
         <section id="home">
             <div class="content">
                 <h1>"Serving Slice-perfection,<br> Every Crust Counts!"</h1>
-                <button class="btn-menu">See Menu</button>
+                <a href="menu.php"><button class="btn-menu">See Menu</button></a>
             </div>
         </section>
         <section id="deals">
@@ -50,7 +53,9 @@
 
                     </div>
                     <button class=" btn-featured">Order Now!</button>
-                    <div class="up"><a href="#top"><i class="fa-solid fa-arrow-up"></i></a></div>
+                    <a href="#top" class='parallax-link'>
+                        <div class="up"><i class="fa-solid fa-arrow-up"></i></div>
+                    </a>
                 </div>
 
             </div>
