@@ -18,16 +18,21 @@ function toggleNav() {
     toggleNav();
   });
 
- document.querySelectorAll('a').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+  const elements = document.getElementsByClassName('parallax-link');
 
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-
-        window.scrollTo({
-          top: targetElement.offsetTop,
-          behavior: 'smooth'
-        });
+  // Loop through each element and attach the event listener
+  for (const element of elements) {
+      element.addEventListener('click', function (e) {
+          e.preventDefault();
+  
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+  
+          if (targetElement) {
+              window.scrollTo({
+                  top: targetElement.offsetTop,
+                  behavior: 'smooth'
+              });
+          }
       });
-    });
+  }
