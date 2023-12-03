@@ -10,8 +10,12 @@
 </head>
 
 <body>
+    
     <div class="overlay">
-        <header>
+    <?php
+    include("./topnav/topnav.php");
+    ?>
+        <!-- <header>
             <nav class="header-navbar">
                 <div class="hamburger" onclick="toggleNav()">&#9776;</div>
                 <ul class="nav-links" id="navLinks">
@@ -27,7 +31,7 @@
                 </ul>
             </nav>
 
-        </header>
+        </header> -->
         <section id="home">
             <div class="content">
                 <h1>"Serving Slice-perfection,<br> Every Crust Counts!"</h1>

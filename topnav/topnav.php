@@ -23,7 +23,7 @@
             <nav class="header-navbar">
                 <ul>
                     <a href="#">ORDER NOW</a>
-                    <a href="login_register.php">SIGN IN <i class="fa-solid fa-user"></i></a>
+                    <a href="./login_register.php">SIGN IN <i class="fa-solid fa-user"></i></a>
                 </ul>
             </nav>
 
