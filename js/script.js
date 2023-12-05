@@ -1,4 +1,19 @@
+function toggleNav() {
+    var x = document.getElementById("myNavbar");
+    if (x.className === "header") {
+      x.className += " responsive";
+    } else {
+      x.className = "header";
+    }
+  }
 
+
+
+
+
+
+
+/*
 function toggleNav() {
     var navLinks = document.getElementById("navLinks");
     var screenWidth = window.innerWidth;
@@ -36,3 +51,4 @@ function toggleNav() {
           }
       });
   }
+*/
