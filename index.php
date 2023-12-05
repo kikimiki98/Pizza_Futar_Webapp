@@ -30,7 +30,7 @@
             <nav class="header-navbar">
                 <ul>
                     <a href="#">ORDER NOW</a>
-                    <a href=" #">SIGN IN <i class="fa-solid fa-user"></i></a>
+                    <a href="login.php">SIGN IN <i class="fa-solid fa-user"></i></a>
                 </ul>
             </nav>
 
