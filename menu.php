@@ -40,6 +40,7 @@ require('db/dbconnect.php');
         <th>Name</th>
         <th>Description</th>
         <th>Price</th>
+        <th>Add</th>
     </tr>";
 
             // Fetch pizza details along with images from the database
@@ -57,7 +58,7 @@ require('db/dbconnect.php');
                 echo "<td>{$pizza['name']}</td>";
                 echo "<td>{$pizza['description']}</td>";
                 echo "<td>\${$pizza['price']}</td>";
-                // echo "<td><a href='#' class='add-to-cart' data-id='{$pizza['pizza_id']}' data-name='{$pizza['name']}' data-price='{$pizza['price']}'><i class='fa-solid fa-plus'></i></a></td>";
+                echo "<td><a href='#' class='add-to-cart' data-img='{$pizza["image_path"]}' data-id='{$pizza['pizza_id']}' data-name='{$pizza['name']}' data-price='{$pizza['price']}'><i class='fa-solid fa-plus'></i></a></td>";
                 echo "</tr>";
             }
 

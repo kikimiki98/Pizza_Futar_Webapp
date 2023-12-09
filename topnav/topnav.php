@@ -25,7 +25,8 @@
             </nav>
             <nav class="header-navbar">
                 <ul>
-                    <a href="#">ORDER NOW</a>
+                    <a href="./checkout.php"><i class="fa badge" style="font-size:24px" value="<?php echo $_SESSION['cart_count'] ?>">&#xf07a;</i></a>
+                    <a href=" #">ORDER NOW</a>
                     <a href="./register.php">SIGN IN <i class="fa-solid fa-user"></i></a>
                 </ul>
             </nav>

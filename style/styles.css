@@ -113,6 +113,26 @@ header {
     transform: translateX(-100%);
   }
 }
+
+.badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+
+.badge:after {
+  content: attr(value);
+  font-size: 12px;
+  background: red;
+  border-radius: 50%;
+  padding: 3px;
+  position: relative;
+  left: -8px;
+  top: -10px;
+  opacity: 0.9;
+}
 /*----------------------------LANDING PAGE-----------------------------------*/
 h1 {
   margin: 0;
@@ -221,7 +241,7 @@ h1 {
 .log_reg_form {
   position: relative;
   display: inline-flex;
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   align-self: center;
 }
 

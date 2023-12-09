@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,11 +14,11 @@
 </head>
 
 <body>
-    
+
     <div class="overlay">
-    <?php
-    include("./topnav/topnav.php");
-    ?>
+        <?php
+        include("./topnav/topnav.php");
+        ?>
         <!-- <header>
             <nav class="header-navbar">
                 <div class="hamburger" onclick="toggleNav()">&#9776;</div>
