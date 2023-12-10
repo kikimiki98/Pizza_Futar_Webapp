@@ -2,6 +2,7 @@
 session_start();
 require('db/dbconnect.php');
 $cartCount = isset($_SESSION['cart_count']) ? $_SESSION['cart_count'] : 0;
+$loggedInUserName = isset($_SESSION['user']['username']) ? $_SESSION['user']['username'] : '';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +30,6 @@ $cartCount = isset($_SESSION['cart_count']) ? $_SESSION['cart_count'] : 0;
             <legend>Bejelentkezés</legend>
             <input type="text" name="login" placeholder="Felhasználónév"><br>
             <input type="password" name="pw" placeholder="Jelszó"><br>
-            <label>Bejelentkezve maradok <input type="checkbox" name="keepLogin"></label><br>
             <input type="submit" name="submitLogin" value="Bejelentkezés">
         </fieldset>
     </form>
@@ -42,7 +42,7 @@ function loginUser($username, $password)
     global $connDB;
 
     // Fetch the hashed password from the database
-    $sql = "SELECT username, password_hash FROM users WHERE username=:username";
+    $sql = "SELECT user_id, username, password_hash FROM users WHERE username=:username";
 
     // Use prepared statements to avoid SQL injection
     $stmt = $connDB->prepare($sql);
@@ -58,12 +58,12 @@ function loginUser($username, $password)
         // Verify the entered password against the stored hashed password
         if (password_verify($password, $storedHashedPassword)) {
             // Passwords match, login successful
-            return true;
+            return array('status' => true, 'user_id' => $result['user_id']);
         }
     }
 
     // Either the username doesn't exist or the password is incorrect
-    return false;
+    return array('status' => false, 'user_id' => null);
 }
 
 
@@ -72,13 +72,16 @@ if (isset($_POST['submitLogin'])) {
     $loginUsername = $_POST['login'];
     $loginPassword = $_POST['pw'];
 
+    $loginResult = loginUser($loginUsername, $loginPassword);
     // Add any necessary validation and error handling here
 
-    // Simulate user login
-    if (loginUser($loginUsername, $loginPassword)) {
-        $_SESSION['username'] = $loginUsername;
+    if ($loginResult['status']) {
+        // Login successful
+        $_SESSION['user']['username'] = $loginUsername;
+        $_SESSION['user']['user_id'] = $loginResult['user_id'];
+
         // Redirect to the dashboard or another page after successful login
-        header('Location: dashboard.php');
+        header('Location: index.php');
         exit();
     } else {
         // Display an error message or handle unsuccessful login

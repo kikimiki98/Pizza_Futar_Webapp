@@ -1,8 +1,9 @@
 <?php
 session_start();
 $cartCount = isset($_SESSION['cart_count']) ? $_SESSION['cart_count'] : 0;
+$loggedInUserName = isset($_SESSION['user']['username']) ? $_SESSION['user']['username'] : '';
 require('db/dbconnect.php');
-if (!isset($_SESSION['user'])) { //!!!!!!!!!!!FONTOS NE FELETSD EL KIVENNI A FELKIÁLTÓT!!!!!!!!//
+if (isset($_SESSION['user'])) { //!!!!!!!!!!!FONTOS NE FELETSD EL KIVENNI A FELKIÁLTÓT!!!!!!!!//
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -44,7 +45,7 @@ if (!isset($_SESSION['user'])) { //!!!!!!!!!!!FONTOS NE FELETSD EL KIVENNI A FEL
                     // Display the total number of items in the cart
                     echo "<p>Total Items in Cart: {$_SESSION['cart_count']}</p>";
                     echo "<p>Total: $" . $totalPrice . "</p>";
-                    echo "<button id='delete' onclick='emptyCart()'> Empty cart </button>";
+                    echo "<button id='delete' onclick='<?php ?>emptyCart()'> Empty cart </button>";
                     echo "<button id='checkout' onclick='checkout()'> Checkout </button>";
                 } else {
                     // Display a message if the cart is empty

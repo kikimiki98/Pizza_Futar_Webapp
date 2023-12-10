@@ -1,6 +1,13 @@
 <?php
 session_start();
 $cartCount = isset($_SESSION['cart_count']) ? $_SESSION['cart_count'] : 0;
+$loggedInUserName = isset($_SESSION['user']['username']) ? $_SESSION['user']['username'] : '';
+
+if (isset($_GET['logout'])) {
+    session_destroy();
+
+    header('Location: ./index.php');
+}
 ?>
 
 <!DOCTYPE html>

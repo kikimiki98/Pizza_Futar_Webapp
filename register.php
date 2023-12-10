@@ -12,14 +12,17 @@ $cartCount = isset($_SESSION['cart_count']) ? $_SESSION['cart_count'] : 0;
     <title>login | Register</title>
 </head>
 <?php
-if (isset($_POST['submitReg'])) {
-    $login = $_POST['login'];
-    $pw = $_POST['pw'];
+$login = $_POST['login'];
+$pw = $_POST['pw'];
 
-    $hashedPw = password_hash($pw, PASSWORD_DEFAULT);
-    $sql = "INSERT INTO users (username, password_hash) VALUES ('$login', '$hashedPw')";
-    $connDB->query($sql);
-}
+// Hash the password
+$hashedPw = password_hash($pw, PASSWORD_DEFAULT);
+
+// Check if the username already exists
+$checkUsernameQuery = "SELECT username FROM users WHERE username = :login";
+$stmtCheck = $connDB->prepare($checkUsernameQuery);
+$stmtCheck->bindParam(':login', $login, PDO::PARAM_STR);
+$stmtCheck->execute();
 ?>
 
 <body>
@@ -37,6 +40,27 @@ if (isset($_POST['submitReg'])) {
             <input type="submit" value="Regisztráció" name="submitReg">
         </fieldset>
     </form>
+    <?php
+    if ($stmtCheck->rowCount() > 0) {
+        // Username already exists, inform the user
+        echo "<p><b>Username '$login' is already taken. Please choose a different username.</b></p>";
+    } else {
+        // Insert the new user record
+        $insertQuery = "INSERT INTO users (username, password_hash) VALUES (:login, :hashedPw)";
+        $stmtInsert = $connDB->prepare($insertQuery);
+        $stmtInsert->bindParam(':login', $login, PDO::PARAM_STR);
+        $stmtInsert->bindParam(':hashedPw', $hashedPw, PDO::PARAM_STR);
+        $insertResult = $stmtInsert->execute();
+
+        if ($insertResult) {
+            // Registration successful
+            echo "<p><b>Registration successful!</b></p>";
+        } else {
+            // Registration failed, display an error message
+            echo "<p><b>Error: " . $stmtInsert->errorInfo()[2] . "</b></p>";
+        }
+    }
+    ?>
 
 </body>
 

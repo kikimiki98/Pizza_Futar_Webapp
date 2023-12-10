@@ -30,7 +30,13 @@
                 <ul>
                     <a href="./checkout.php"><i class="fa badge" style="font-size:24px" value="<?php echo $cartCount ?>">&#xf07a;</i></a>
                     <a href="./register.php">SIGN UP</a>
-                    <a href="./login.php">SIGN IN <i class="fa-solid fa-user"></i></a>
+                    <a href="./login.php">SIGN IN </a>
+                    <?php if (!empty($loggedInUserName)) : ?>
+                        <a href="./profil.php"><?php echo $loggedInUserName; ?> <i class="fa-solid fa-user"></i></a>
+                        <a href="./index.php?logout">Logout</a>
+                    <?php else : ?>
+                        <a href="./profil.php"><i class="fa-solid fa-user"> </i></a>
+                    <?php endif; ?>
                 </ul>
             </nav>
 
