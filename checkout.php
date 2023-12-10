@@ -1,5 +1,6 @@
 <?php
 session_start();
+$cartCount = isset($_SESSION['cart_count']) ? $_SESSION['cart_count'] : 0;
 require('db/dbconnect.php');
 if (!isset($_SESSION['user'])) { //!!!!!!!!!!!FONTOS NE FELETSD EL KIVENNI A FELKIÁLTÓT!!!!!!!!//
 ?>

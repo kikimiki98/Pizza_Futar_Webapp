@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,9 +28,9 @@
             </nav>
             <nav class="header-navbar">
                 <ul>
-                    <a href="./checkout.php"><i class="fa badge" style="font-size:24px" value="<?php echo $_SESSION['cart_count'] ?>">&#xf07a;</i></a>
-                    <a href=" #">ORDER NOW</a>
-                    <a href="./register.php">SIGN IN <i class="fa-solid fa-user"></i></a>
+                    <a href="./checkout.php"><i class="fa badge" style="font-size:24px" value="<?php echo $cartCount ?>">&#xf07a;</i></a>
+                    <a href="./register.php">SIGN UP</a>
+                    <a href="./login.php">SIGN IN <i class="fa-solid fa-user"></i></a>
                 </ul>
             </nav>
 
