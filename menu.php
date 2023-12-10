@@ -57,13 +57,11 @@ if (isset($_SESSION['user'])) { ?>
                 // Loop through the result to display them in the table
                 foreach ($pizzasWithImages as $pizza) {
                     // Display each row with the image and pizza details
-                    echo "<tr>";
-                    echo '<td><img class="menu-images" src="' . $pizza['image_path'] . '" alt="' . $pizza['image_path'] . '"></td>';
+                    echo '<td><img class="menu-images" src="' . $pizza['image_path'] . '" alt="' . $pizza['name'] . '"></td>';
                     echo "<td>{$pizza['name']}</td>";
                     echo "<td>{$pizza['description']}</td>";
                     echo "<td>\${$pizza['price']}</td>";
                     echo "<td><a href='#' class='add-to-cart' data-img='{$pizza["image_path"]}' data-id='{$pizza['pizza_id']}' data-name='{$pizza['name']}' data-price='{$pizza['price']}'><i class='fa-solid fa-plus'></i></a></td>";
-                    echo "</tr>";
                 }
 
                 echo "</table></div>";
