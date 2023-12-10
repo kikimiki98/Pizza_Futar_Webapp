@@ -61,7 +61,7 @@ if (isset($_SESSION['user'])) { ?>
                     echo "<td>{$pizza['name']}</td>";
                     echo "<td>{$pizza['description']}</td>";
                     echo "<td>\${$pizza['price']}</td>";
-                    echo "<td><a href='#' class='add-to-cart' data-img='{$pizza["image_path"]}' data-id='{$pizza['pizza_id']}' data-name='{$pizza['name']}' data-price='{$pizza['price']}'><i class='fa-solid fa-plus'></i></a></td>";
+                    echo "<td><a href='#' class='add-to-cart' data-img='{$pizza['image_path']}' data-id='{$pizza['pizza_id']}' data-name='{$pizza['name']}' data-price='{$pizza['price']}'><i class='fa-solid fa-plus'></i></a></td>";
                 }
 
                 echo "</table></div>";

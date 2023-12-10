@@ -12,6 +12,11 @@ document.addEventListener('DOMContentLoaded', function () {
             var pizzaName = this.getAttribute('data-name');
             var pizzaPrice = this.getAttribute('data-price');
 
+            console.log('pizzaImg:', pizzaImg);
+            console.log('pizzaId:', pizzaId);
+            console.log('pizzaName:', pizzaName);
+            console.log('pizzaPrice:', pizzaPrice);
+
             // Send the pizza details to the server using AJAX
             addToCart({
                 image: pizzaImg,
