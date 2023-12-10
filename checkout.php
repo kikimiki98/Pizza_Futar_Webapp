@@ -33,7 +33,7 @@ if (isset($_SESSION['user'])) : ?>
                     // Output the HTML for each cart item
                     foreach ($_SESSION['cart'] as $item) {
                         $price = $item['price'];
-                        echo '<img class="menu-images" src="' . $item['image'] . '" alt="' . $item['image'] . '">';
+                        echo '<img class="menu-images" src="' . $item['image'] . '" alt="Pizza Image">';
                         echo "<p>Item ID: {$item['id']}</p>";
                         echo "<p>Item Name: {$item['name']}</p>";
                         echo "<p>Item Price: {$item['price']}</p>";

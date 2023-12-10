@@ -45,7 +45,7 @@ $loggedInUserName = isset($_SESSION['user']['username']) ? $_SESSION['user']['us
 
                 echo "</table>";
             } else {
-                echo "Error fetching orders: " . $your_pdo_connection->errorInfo()[2];
+                echo "Error fetching orders: " . $connDB->errorInfo()[2];
             }
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
