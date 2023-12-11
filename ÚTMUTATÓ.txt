@@ -1,6 +1,13 @@
 Xampp szükséges.
 
 -Xampp/htdocs mappába kell kicsomagolni
--Phpmyadmin-ban létre kell hozni egy pizzafutar nevű adatbázist
-és oda beimportálni a pizzafutar.sql-t
--Localhoston ha minden igaz működnie kell.
+-Phpmyadmin-ban be kell importálni az db mappában lévő sql fájlt és az létre hozza a szükséges database-t
+-elérése a lapnak pl.: localhost/pizza_futar_webapp/index.php
+
+admin belépési adatok:
+felsz.: admin
+jelsz.: 123
+
+szimpla user:
+felsz.: user
+jelsz.: 123
