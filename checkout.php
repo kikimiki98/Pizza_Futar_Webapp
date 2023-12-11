@@ -3,7 +3,7 @@ session_start();
 $cartCount = isset($_SESSION['cart_count']) ? $_SESSION['cart_count'] : 0;
 $loggedInUserName = isset($_SESSION['user']['username']) ? $_SESSION['user']['username'] : '';
 require('db/dbconnect.php');
-if (isset($_SESSION['user'])) : ?>
+if (isset($_SESSION['user'])): ?>
 
     <!DOCTYPE html>
     <html lang="en">
@@ -13,7 +13,9 @@ if (isset($_SESSION['user'])) : ?>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Menu</title>
         <link rel="stylesheet" href="style/styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+            integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="js/script.js"></script>
         <script src="js/addToCart.js"></script>
@@ -23,7 +25,18 @@ if (isset($_SESSION['user'])) : ?>
 
         <div class="overlay">
             <?php
-            include("topnav/topnav.php");
+            $user= null;
+            if (isset($_SESSION['user']['username'])) {
+                $user = $_SESSION['user']['username'];
+            }
+
+            if ($user === "admin") {
+                require("./topnav/topnav_logged_in_admin.php");
+            } elseif (isset($user)) {
+                require("./topnav/topnav_logged_in.php");
+            } else {
+                require("./topnav/topnav.php");
+            }
             ?>
 
             <body>
@@ -55,7 +68,7 @@ if (isset($_SESSION['user'])) : ?>
             </body>
 
     </html>
-<?php else : ?>
+<?php else: ?>
     <!DOCTYPE html>
     <html lang="en">
 
@@ -64,7 +77,9 @@ if (isset($_SESSION['user'])) : ?>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Menu</title>
         <link rel="stylesheet" href="style/styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+            integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="js/script.js"></script>
         <script src="js/addToCart.js"></script>
@@ -78,7 +93,7 @@ if (isset($_SESSION['user'])) : ?>
             ?>
 
             <body>
-                You need to be logged in! <a href="./register.php">SIGN IN <i class="fa-solid fa-user"></i></a>
+                You need to be logged in! <a href="./login.php">SIGN IN <i class="fa-solid fa-user"></i></a>
             </body>
 
     </html>
